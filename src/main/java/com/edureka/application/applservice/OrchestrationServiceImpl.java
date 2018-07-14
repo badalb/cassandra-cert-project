@@ -5,25 +5,19 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.datastax.driver.core.Cluster;
-import com.datastax.driver.core.Session;
+import com.edureka.application.repository.MovieRepository;
 import com.edureka.application.rest.model.Movie;
 
 @Service
-public class OrchestrationAPIServiceImpl implements OrchestrationAPIService {
+public class OrchestrationServiceImpl implements OrchestrationService {
 
 	@Autowired
-	private Cluster cluster;
+	private MovieRepository movieRepository;
 
 	@Override
 	public List<Movie> getAllMovies() {
-		
-		Session session = cluster.connect();
 
-		//
-
-		session.close();
-		return null;
+		return movieRepository.getAllMovies();
 	}
 
 }

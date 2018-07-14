@@ -9,10 +9,10 @@ import com.datastax.driver.core.Cluster.Builder;
 
 @Configuration
 public class CassandraConnector {
-	
+
 	@Value("${edureca.cassandra.host}")
 	private String host;
-	
+
 	@Value("${edureca.cassandra.port}")
 	private Integer port;
 

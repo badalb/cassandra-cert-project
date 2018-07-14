@@ -1,8 +1,10 @@
 package com.edureka.application.applservice;
 
+import java.util.List;
+
 import com.edureka.application.rest.model.Movie;
 
-public interface MovieAPIService {
+public interface OrchestrationService {
 
-	public void createMovie(Movie movie);
+	List<Movie> getAllMovies();
 }

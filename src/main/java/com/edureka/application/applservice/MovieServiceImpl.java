@@ -3,27 +3,18 @@ package com.edureka.application.applservice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.datastax.driver.core.Cluster;
-import com.datastax.driver.core.Session;
+import com.edureka.application.repository.MovieRepository;
 import com.edureka.application.rest.model.Movie;
 
 @Service
-public class MovieAPIServiceImpl implements MovieAPIService{
-	
+public class MovieServiceImpl implements MovieService {
+
 	@Autowired
-	private Cluster cluster;
+	private MovieRepository movieRepository;
 
 	@Override
 	public void createMovie(Movie movie) {
-		
-		Session session = cluster.connect();
-		
-		//
-		
-		
-		session.close();
+		movieRepository.createMovie(movie);
 	}
-	
-	
 
 }

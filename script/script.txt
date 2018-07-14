@@ -1,0 +1,7 @@
+CREATE KEYSPACE edureka
+        WITH REPLICATION = {
+           'class': 'SimpleStrategy', 
+            'replication_factor': 1
+       };
+   
+  CREATE TABLE movies (title text, also_viewed_title text, count int, PRIMARY KEY (title, count));
